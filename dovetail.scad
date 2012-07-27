@@ -24,8 +24,6 @@
  *  http://www.digitalspirit.org/
  */
 
-use <body.scad>;
-
 /**
  *  Create one teeth
  *  @param int width        Teeth width
