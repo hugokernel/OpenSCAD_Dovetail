@@ -1,0 +1,38 @@
+
+Dovetail parametric generator for OpenScad
+
+Example :
+
+    dim = [20, 60, 5];
+    clear = 0.3;
+
+    /**
+     * [x, y, z]
+     * - x : Teeth count
+     * - y : Teeth height
+     * - z : Teeth Clearance
+     */
+    teeth = [3, 4, clear];
+
+    % cube(size = dim, center = true);
+
+    // First part
+    color("GREEN") intersection() {
+        cube(size = dim, center = true);
+        cutter([0, -10, 0], dim, teeth, true);
+    }
+
+    // Second part
+    color("RED") intersection() {
+        cube(size = dim, center = true);
+        cutter([0, -10, 0], dim, teeth, false);
+        cutter([0, 10, 0], dim, teeth, true);
+    }
+
+    // Third part
+    //translate([44, 0, 0])
+    color("BLUE") intersection() {
+        cube(size = dim, center = true);
+        cutter([0, 10, 0], dim, teeth, false);
+    }
+
