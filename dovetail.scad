@@ -77,22 +77,20 @@ module dovetail(width, teeth_count, teeth_height, teeth_thickness, clear = 0.1, 
         }
 
         for (i = [-1 : teeth_count * 2 - 1] ) {
+            x = start_at + y / 2 + (teeth_width - offset + clear) * i;
             if (i % 2) {
-                assign(x = start_at + y / 2 + (teeth_width - offset + clear) * i + 0.1) {
-                    translate([x + compensation, - clear, 0]) {
-                        rotate([0, 0, 180]) {
-                            if (male == true) {
-                                dovetail_teeth(teeth_width - clear, teeth_height - clear, teeth_thickness);
-                            }
+                x = x + 0.1;
+                translate([x + compensation, - clear, 0]) {
+                    rotate([0, 0, 180]) {
+                        if (male == true) {
+                            dovetail_teeth(teeth_width - clear, teeth_height - clear, teeth_thickness);
                         }
                     }
                 }
             } else {
-                assign(x = start_at + y / 2 + (teeth_width - offset + clear) * i) {
-                    translate([x, clear, 0]) {
-                        if (male == false) {
-                            dovetail_teeth(teeth_width - clear, teeth_height - clear, teeth_thickness);
-                        }
+                translate([x, clear, 0]) {
+                    if (male == false) {
+                        dovetail_teeth(teeth_width - clear, teeth_height - clear, teeth_thickness);
                     }
                 }
             }
