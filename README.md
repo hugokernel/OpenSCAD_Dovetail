@@ -1,4 +1,4 @@
-# Dovetail parametric generator for OpenSCAD
+# Dovetail parametric generator for OpenSCAD / Générateur de queue d'aronde pour OpenSCAD
 
 You want to print a OpenSCAD design too large for your 3D printer ?
 
