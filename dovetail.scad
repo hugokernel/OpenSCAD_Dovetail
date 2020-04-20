@@ -49,7 +49,7 @@ module dovetail_teeth(width, height, thickness) {
  *  @param int  clear           Teeth clear
  *  @param bool male            Get male (true) or female (false)
  */
-module dovetail(width, teeth_count, teeth_height, teeth_thickness, clear=0.1, male=true) {
+module dovetail(width, teeth_count, teeth_height, teeth_thickness, clear=0.1, male=true, debug=false) {
 
     /**
      * 4 sections :
@@ -72,9 +72,9 @@ module dovetail(width, teeth_count, teeth_height, teeth_thickness, clear=0.1, ma
     translate([0, 0, - teeth_thickness / 2]) {
 
         // Debug purpose only
-        % union() {
+        if (debug) {
             translate([- width / 2, 0, - width / 2]) {
-                cube(size = [width, 0.01, width]);
+                %cube(size = [width, 0.01, width]);
             }
         }
 
@@ -107,9 +107,9 @@ module dovetail(width, teeth_count, teeth_height, teeth_thickness, clear=0.1, ma
  *  @param vector teeths    Teeths parameters ([count, height, clearance])
  *  @param bool   male      Get male (true) or female (false)
  */
-module cutter(position, dimension, teeths, male=true) {
+module cutter(position, dimension, teeths, male=true, debug=false) {
     translate(position) {
-        dovetail(dimension[0], teeths[0], teeths[1], dimension[2], teeths[2], male);
+        dovetail(dimension[0], teeths[0], teeths[1], dimension[2], teeths[2], male, debug);
 
         if (male) {
             translate([- dimension[0] / 2, - (teeths[1] / 2 - 0.1) - dimension[1], - dimension[2] / 2]) {
