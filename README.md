@@ -1,4 +1,4 @@
-# Dovetail parametric generator for OpenScad
+# Dovetail parametric generator for OpenSCAD
 
 You want to print a OpenSCAD design too large for your 3D printer ?
 
@@ -14,7 +14,7 @@ With OpenSCAD version higher than 2019.05, you can use customizer to apply some 
 
 ## Example
 
-```Openscad
+```OpenSCAD
 use <dovetail.scad>;
 
 // Your amazing design you want to cut
