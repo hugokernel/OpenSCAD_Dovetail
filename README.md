@@ -4,6 +4,8 @@ You want to print a OpenSCAD design too large for your 3D printer ?
 
 Try to cut them with a dovetail !
 
+![Dovetail](https://github.com/hugokernel/OpenSCAD_Dovetail/blob/master/example.png?raw=true)
+
 ## Use
 
 Open the demo.scad file with OpenSCAD to see the cut in action.
