@@ -116,7 +116,7 @@ module cutter(position, dimension, teeths, male=true, debug=false) {
                 cube(size = dimension);
             }
         } else {
-            translate([- dimension[0] / 2, teeths[1] / 2 - 0.1, , - dimension[2] / 2]) {
+            translate([- dimension[0] / 2, teeths[1] / 2 - 0.1, - dimension[2] / 2]) {
                 cube(size = dimension);
             }
         }
